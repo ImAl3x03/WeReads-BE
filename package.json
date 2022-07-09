@@ -1,0 +1,22 @@
+{
+  "name": "wereads-be",
+  "version": "1.0.0",
+  "description": "WeReads website BE",
+  "main": "index.ts",
+  "scripts": {
+    "start": "node index.ts",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "github.com-personal:ImAl3x03/WeReads-BE.git"
+  },
+  "author": "Alex Di Maria",
+  "license": "ISC",
+  "dependencies": {
+    "@types/node": "^18.0.3",
+    "dotenv": "^16.0.1",
+    "express": "^4.18.1", 
+    "typescript": "^4.7.4"
+  }
+}
