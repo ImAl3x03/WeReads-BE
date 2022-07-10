@@ -1,11 +1,11 @@
-require('dotenv').config();
+import fs from "fs";
+import {config} from "dotenv";
+import express from "express";
 
-const fs = require("fs");
-
-const express = require("express");
+config();
 var app = express();
 
-app.get("/", (req, res) => {
+app.get("/", (req: any, res: any) => {
 
     let filePath = __dirname + "/test.txt";
 
@@ -15,7 +15,7 @@ app.get("/", (req, res) => {
     if (exist) {
         res.download(filePath);
     } else {
-        fs.writeFile(filePath, "", (err) => console.log("ma va in mona de to mare", err))
+        fs.writeFile(filePath, "", (err: any) => console.log("ma va in mona de to mare", err))
 
         res.send(process.env.TEST);
     }
