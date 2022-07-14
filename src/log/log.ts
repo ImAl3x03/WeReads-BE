@@ -13,7 +13,7 @@ class Log extends LogConfig {
     info: (message: string) => void = (message) => {
         let data = new Date().toLocaleString("it-IT", {timeZone: "Europe/Rome"})
         
-        let logMessage: string = `${data} INFO - ${message}`;
+        let logMessage: string = `${data} INFO - ${message}\n`;
         
         fs.appendFile(this.#path, logMessage, (err) => {if(err) throw err;});
     }
@@ -21,7 +21,7 @@ class Log extends LogConfig {
     error: (message: string) => void = (message) => {
         let data = new Date().toLocaleString("it-IT", {timeZone: "Europe/Rome"})
         
-        let logMessage: string = `${data} ERROR - ${message}`;
+        let logMessage: string = `${data} ERROR - ${message}\n`;
         
         fs.appendFile(this.#path, logMessage, (err) => {if(err) throw err;});
     }
@@ -29,7 +29,7 @@ class Log extends LogConfig {
     warning: (message: string) => void = (message) => {
         let data = new Date().toLocaleString("it-IT", {timeZone: "Europe/Rome"})
         
-        let logMessage: string = `${data} WARNING - ${message}`;
+        let logMessage: string = `${data} WARNING - ${message}\n`;
         
         fs.appendFile(this.#path, logMessage, (err) => {if(err) throw err;});
     }
