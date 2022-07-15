@@ -13,16 +13,17 @@ const client = new MongoClient(dbConnectionString);
 
 const connect = async () => {
     try {
-        await client.connect();
         log.info("Connecting to database...")
-    } catch(err: any) {
+        await client.connect();
+        log.info("Database connected");
+    } catch (err: any) {
         log.error(`Database connection not provided \n${err.message}`)
     }
 }
 
 connect();
 let db = client.db(dbName);
-let collection = db.collection(collectionName)
+let collection = db.collection(collectionName);
 
 export default db;
-export {collection};
+export { collection };
