@@ -6,8 +6,8 @@ import bodyParser from 'body-parser';
 /**********************
  ****** ENDPOINT ******
  **********************/
- import LogRouter from './src/endpoint/log';
- import UserRouter from './src/endpoint/user';
+import LogRouter from './src/endpoint/log';
+import LoginRouter from './src/endpoint/user';
 
 config();
 var app = express();
@@ -24,7 +24,7 @@ app.use(bodyParser.urlencoded({
 app.use(bodyParser.json());
 
 app.use("/log", LogRouter);
-app.use("/", UserRouter);
+app.use("/", LoginRouter);
 
 app.listen(process.env.PORT, () => {
     log.info(`Server is listening on port ${process.env.PORT}`);
